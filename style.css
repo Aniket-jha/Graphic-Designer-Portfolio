@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=Aladin&family=Kaushan+Script&family=Merriweather:wght@700&family=Montserrat:wght@200&family=Rock+Salt&family=Signika+Negative:wght@600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300&family=Poppins:wght@500&family=Shippori+Mincho+B1:wght@600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: white;
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+i {
+  cursor: pointer;
+}
+i:hover {
+  color: pink;
+}
+.light-mode {
+  background-color: white;
+  color: black;
+}
+#dark-mode {
+  padding: 10px;
+  padding-bottom: 0;
+}
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  background-color: black;
+  font-family: Merriwether;
+}
+.logo {
+  color: white;
+  font-family: Aladin;
+  letter-spacing: 3px;
+  font-size: 50px;
+}
+.logo-text {
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+  list-style-type: none;
+  z-index: 999;
+}
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 25px;
+  padding: 5px;
+}
+.nav-links a:hover {
+  background-color: white;
+  color: black;
+}
+.burger {
+  display: none;
+  cursor: pointer;
+}
+.container-two {
+  background-color: white;
+}
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding: 0px 4px;
+  margin-top: 3%;
+  margin-right: 17%;
+  margin-left: 17%;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #4c5358;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+.column {
+  -ms-flex: 20%;
+  flex: 20%;
+  max-width: 100%;
+  padding: 0, 4px;
+}
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+  cursor: pointer;
+}
+.column img:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5);
+}
+.foot {
+  display: flex;
+  display: -ms-flexbox;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding: 5vh;
+}
+.footes {
+  -ms-flex: 50%;
+  flex: 50%;
+  max-width: 100%;
+  padding: 5px, 4px;
+}
+.footes h3 {
+  font-family: Kaushan Script;
+  font-size: 1.5rem;
+}
+.footes i {
+  padding: 0 5px;
+}
+.foot i:hover {
+  color: pink;
+}
+@media screen and (max-width: 1024px) {
+  .nav-links {
+    width: 50%;
+  }
+  .row {
+    margin-top: 3%;
+    margin-right: 5%;
+    margin-left: 5%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .row {
+    margin-top: 20vh;
+    margin-bottom: 0;
+  }
+  .column {
+    -ms-flex: 20%;
+    flex: 20%;
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  p {
+    margin: 0;
+  }
+  .nav-links {
+    position: absolute;
+    right: 0px;
+    height: 92vh;
+    top: 8vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+  }
+  .nav-links a {
+    color: black;
+  }
+  .nav-links li {
+    opacity: 0;
+  }
+  .burger {
+    display: block;
+  }
+}
+
+.nav-active {
+  transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
